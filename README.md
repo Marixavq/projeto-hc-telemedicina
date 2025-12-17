@@ -22,7 +22,7 @@ A aplicação busca orientar usuários com baixa familiaridade digital a:
 
 Contribuindo para a redução do absenteísmo em consultas médicas por meio de uma interface acessível e intuitiva.
 
-##🧩 Escopo da Versão Atual
+## 🧩 Escopo da Versão Atual
 
 Nesta versão individual do projeto, o escopo foi deliberadamente reduzido para priorizar qualidade e clareza, contemplando:
 
@@ -67,6 +67,7 @@ Esta versão do projeto está sendo desenvolvida individualmente por:
 
 
 ## 📂 Endereço do projeto 
+https://github.com/Marixavq/projeto-hc-telemedicina
 
 
-
+> **Em desenvolvimento**
