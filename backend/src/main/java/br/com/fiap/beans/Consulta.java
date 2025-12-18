@@ -1,23 +1,22 @@
 package br.com.fiap.beans;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class Consulta {
     private int idConsulta;
     private Medico medico;
-    private LocalDate data;
-    private LocalTime horario;
+    private Paciente paciente;
+    private LocalDateTime dataHora;
     private String status;
 
     public Consulta() {
     }
 
-    public Consulta(int idConsulta, Medico medico, LocalDate data, LocalTime horario, String status) {
+    public Consulta(int idConsulta, Medico medico, Paciente paciente, LocalDateTime dataHora, String status) {
         this.idConsulta = idConsulta;
         this.medico = medico;
-        this.data = data;
-        this.horario = horario;
+        this.paciente = paciente;
+        this.dataHora = dataHora;
         this.status = status;
     }
 
@@ -37,20 +36,20 @@ public class Consulta {
         this.medico = medico;
     }
 
-    public LocalDate getData() {
-        return data;
+    public Paciente getPaciente() {
+        return paciente;
     }
 
-    public void setData(LocalDate data) {
-        this.data = data;
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 
-    public LocalTime getHorario() {
-        return horario;
+    public LocalDateTime getDataHora() {
+        return dataHora;
     }
 
-    public void setHorario(LocalTime horario) {
-        this.horario = horario;
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
     }
 
     public String getStatus() {

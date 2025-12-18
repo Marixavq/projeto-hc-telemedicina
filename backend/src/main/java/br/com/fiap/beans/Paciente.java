@@ -11,11 +11,12 @@ public class Paciente {
     private String rg;
     private String email;
     private String telefone;
+    private String senha;
 
     public Paciente() {
     }
 
-    public Paciente(int idPaciente, String nomePaciente, LocalDate dataNascimento, String cpf, String rg, String email, String telefone) {
+    public Paciente(int idPaciente, String nomePaciente, LocalDate dataNascimento, String cpf, String rg, String email, String telefone,String senha) {
         this.idPaciente = idPaciente;
         this.nomePaciente = nomePaciente;
         this.dataNascimento = dataNascimento;
@@ -23,6 +24,7 @@ public class Paciente {
         this.rg = rg;
         this.email = email;
         this.telefone = telefone;
+        this.senha = senha;
     }
 
     public int getIdPaciente() {
@@ -79,5 +81,13 @@ public class Paciente {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
