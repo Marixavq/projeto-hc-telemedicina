@@ -14,11 +14,6 @@ public class PacienteDAO {
 
     private Connection minhaConexao;
 
-    // metodo construtor com parâmetro vazio
-    public PacienteDAO() {
-        super();
-    }
-
     // Insert
     public void inserirPaciente(Paciente paciente) throws SQLException, ClassNotFoundException {
         PreparedStatement stmt = null;
@@ -90,7 +85,6 @@ public class PacienteDAO {
         }
     }
 
-
     // metodo mapear Paciente
     private Paciente mapearPaciente(ResultSet rs) throws SQLException {
         Paciente paciente = new Paciente();
@@ -132,8 +126,7 @@ public class PacienteDAO {
     }
 
 
-
-    // Buscar pelo email -> login
+    // Buscar paciente por email
     public Paciente buscarPorEmail(String email) throws SQLException, ClassNotFoundException {
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -147,9 +140,7 @@ public class PacienteDAO {
             rs = stmt.executeQuery();
 
             if (rs.next()) {
-                Paciente paciente = mapearPaciente(rs);
-
-                return paciente;
+                return mapearPaciente(rs);
             }
             return null;
 
@@ -159,7 +150,6 @@ public class PacienteDAO {
             if (minhaConexao != null && !minhaConexao.isClosed()) minhaConexao.close(); // fecha Conexão
         }
     }
-
 
 
     // Buscar Paciente pelo ID
@@ -187,6 +177,7 @@ public class PacienteDAO {
             if (minhaConexao != null && !minhaConexao.isClosed()) minhaConexao.close(); // fecha Conexão
         }
     }
+
 
 
 }

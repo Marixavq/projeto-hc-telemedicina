@@ -12,11 +12,6 @@ public class PacienteService {
 
     // Criar paciente
     public void cadastrarPaciente(Paciente paciente) throws ClassNotFoundException, SQLException {
-        if (emailExiste(paciente.getEmail())) {
-            throw new RuntimeException("Email já cadastrado!");
-        }
-
-        // regra de negócio
         if (pacienteDAO.buscarPorEmail(paciente.getEmail()) != null) {
             throw new RuntimeException("Email já cadastrado");
         }
@@ -28,12 +23,10 @@ public class PacienteService {
     public List<Paciente> listarPacientes() throws ClassNotFoundException, SQLException {
 
         return pacienteDAO.listarPacientes();
-        //return (ArrayList<Usuario>) usuarioDAO.selecionarUsuario();
     }
 
     // Atualizar paciente
     public void atualizarPaciente(Paciente paciente) throws ClassNotFoundException, SQLException {
-
         Paciente pacienteExistente = pacienteDAO.buscarPorEmail(paciente.getEmail());
 
         if (pacienteExistente != null && pacienteExistente.getIdPaciente() != paciente.getIdPaciente()) {
@@ -53,28 +46,15 @@ public class PacienteService {
         return pacienteDAO.selecionarPacientePorId(idPaciente);
     }
 
-
-    // ----- Regras de negocio ------
-
-
     // login
     public boolean verificarLogin(String email, String senha) throws SQLException, ClassNotFoundException {
-
         Paciente paciente = pacienteDAO.buscarPorEmail(email);
 
         if (paciente == null) {
             return false;
         }
-
         return paciente.getSenha().equals(senha);
     }
 
 
-    // verifica se email já foi cadastrado
-    public boolean emailExiste(String email) throws SQLException, ClassNotFoundException {
-
-        Paciente paciente = pacienteDAO.buscarPorEmail(email);
-
-        return paciente != null;
-    }
 }
