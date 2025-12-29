@@ -134,7 +134,7 @@ public class PacienteDAO {
         try {
             minhaConexao = new ConexaoFactory().conexao();
 
-            stmt = minhaConexao.prepareStatement("select id_paciente, nome_paciente, data_nascimento, cpf, rg, email, telefone, senha from PACIENTE where EMAIL = ?");
+            stmt = minhaConexao.prepareStatement("select id_paciente, nome_paiente, data_nascimento, cpf, rg, email, telefone, senha from PACIENTE where EMAIL = ?");
             stmt.setString(1, email);
 
             rs = stmt.executeQuery();
